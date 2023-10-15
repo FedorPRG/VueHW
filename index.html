@@ -6,44 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-    <style>
-        * {
-            margin: 0;
-        }
-
-        .product-wrapper {
-            margin-top: 50px;
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-        }
-
-        .product {
-            padding: 10px;
-            width: 150px;
-            height: 60px;
-            border: solid 1px #333;
-            text-align: center;
-        }
-
-        .product p {
-            font-size: 25px;
-        }
-    </style>
 </head>
 
 <body>
-    <div class="wrapper" id="app">
-        <div class="product-wrapper">
-            <div class="product" v-for="(element, index) in products" :key="element.id">
-                <h2>{{element.name}}</h2>
-                <p>{{element.price}}</p>
-            </div>
+    <div id="app">
+        {{ message }}
+        <br>
+        <button @click="turnOver()">{{nameButton}}</button>
+        <br>
+        <div v-for="(element, index) in products" :key="element.id">
+            <h3 @click="removeElementFromList(index)">{{element.name}}</h3>
         </div>
-        <div class="button-wrapper" style="margin-top: 30px;display: flex;justify-content: center; gap: 30px; ">
-            <button style="font-size: 20px;padding: 10px;" @click="sortAscending()">Сортировка по возрастанию</button>
-            <button style="font-size: 20px;padding: 10px;" @click="sortDescending()">Сортировка по убыванию</button>
-        </div>
+        <button @click="addNewElementInList()">Добавить Новый элемент списка</button>
     </div>
     <script src="./index.js"></script>
 </body>
