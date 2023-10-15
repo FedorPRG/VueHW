@@ -1,0 +1,47 @@
+@import "vars";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: $titleColor;
+}
+svg:hover {
+  cursor: pointer;
+}
+body {
+  background: url(../img/Line.png) no-repeat center;
+}
+.center {
+  padding-left: calc(50% - $widthSite / 2);
+  padding-right: calc(50% - $widthSite / 2);
+}
+.logo {
+  font-family: "DM Serif Display", sans-serif;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 125%; /* 50px */
+  & img {
+    width: 34px;
+  }
+}
+.header {
+  padding-top: 53px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__right {
+    display: flex;
+    justify-content: space-between;
+    width: 243px;
+    font-family: "Jost", sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125%; /* 25px */
+  }
+}
