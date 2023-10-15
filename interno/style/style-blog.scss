@@ -1,4 +1,5 @@
 @import "header";
+@import "breadcrumbs";
 @import "footer";
 @import "vars";
 
@@ -7,19 +8,30 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Jost:wght@400;600&display=swap");
 
 .banner {
-  margin-top: 57px;
-  height: 758px;
-  background: url(../img/index-banner.png) no-repeat center;
+  margin-top: 45px;
+  height: 356px;
+  background: url(../img/blog-banner.png) no-repeat center;
+  padding-top: 178px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__titleBack {
+    width: 503px;
+    border-radius: 37px 37px 0px 0px;
+    background: #fff;
+    padding: 41px 78px;
+  }
   &__title {
-    padding-top: 208px;
-    padding-left: 52px;
+    text-align: center;
     color: $titleColor;
     font-family: "DM Serif Display", sans-serif;
-    font-size: 65px;
+    font-size: 50px;
     font-style: normal;
     font-weight: 400;
     line-height: 125%; /* 81.25px */
   }
+
   &__text {
     width: 433px;
     padding-top: 18px;
@@ -41,7 +53,7 @@
     color: #fff;
     padding: 26px 48px;
     border-radius: 18px;
-    background: $titleColor;
+    background: #292f36;
     box-shadow: 0px 10px 20px 0px rgba(192, 192, 192, 0.35);
     align-items: center;
     font-family: "Jost", sans-serif;
@@ -51,11 +63,10 @@
     letter-spacing: 0.36px;
   }
 }
-.projects {
-  margin-top: 96px;
-  &__title {
+.blog {
+  margin-top: 200px;
+  &__heading {
     color: $titleColor;
-    text-align: center;
     font-family: "DM Serif Display", sans-serif;
     font-size: 50px;
     font-style: normal;
@@ -63,42 +74,23 @@
     line-height: 125%; /* 62.5px */
     letter-spacing: 1px;
   }
-  &__text {
-    margin-top: 8px;
-    color: $textColor;
-    text-align: center;
-    font-family: "Jost", sans-serif;
-    font-size: 22px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 150%; /* 33px */
-    letter-spacing: 0.22px;
-  }
   &__content {
-    margin-top: 93px;
-    display: grid;
-    grid-template-columns: repeat(2, 548px);
-    row-gap: 56px;
-    column-gap: 104px;
-  }
-}
-.project {
-  &__wrapper {
-    margin-top: 24px;
+    padding: 22px;
+    border-radius: 62px;
+    border: 1px solid #e7e7e7;
+    box-shadow: 0px 10px 30px 0px rgba(255, 255, 255, 0.25);
     display: flex;
-    justify-content: space-between;
+    gap: 65px;
     align-items: center;
   }
-  &__name {
-    color: $titleColor;
-    font-family: "DM Serif Display", sans-serif;
+  &__title {
     font-size: 25px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 125%; /* 31.25px */
     letter-spacing: 0.5px;
   }
-  &__discr {
+
+  &__text {
+    width: 469px;
+    margin-top: 22px;
     color: $textColor;
     font-family: "Jost", sans-serif;
     font-size: 22px;
@@ -107,55 +99,27 @@
     line-height: 150%; /* 33px */
     letter-spacing: 0.22px;
   }
-}
-.indicators {
-  margin-top: 100px;
-  background-color: $indicatorsBackColor;
-  height: 457px;
-  display: flex;
-  gap: 130px;
-  &__item {
-    padding-top: 151px;
-    width: 192px;
-    position: relative;
-    &:not(:last-child)::after {
-      content: " ";
-      background: $indicatorColor;
-      width: 1px;
-      height: 130px;
-      top: 169px;
-      left: 250px;
-      position: absolute;
-    }
+  &__wrapper {
+    margin-top: 30px;
     display: flex;
-    flex-direction: column;
+    gap: 300px;
     align-items: center;
   }
-  &__quantity {
-    color: $indicatorColor;
-    font-family: "DM Serif Display", sans-serif;
-    font-size: 85px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 125%; /* 106.25px */
-    letter-spacing: 1.7px;
-  }
-  &__name {
-    margin-top: 16px;
+  &__data {
     color: $textColor;
     font-family: "Jost", sans-serif;
-    font-size: 22px;
+    font-size: 16px;
     font-style: normal;
     font-weight: 400;
-    line-height: 150%; /* 33px */
-    letter-spacing: 0.22px;
+    line-height: 150%; /* 24px */
+    letter-spacing: 0.16px;
   }
 }
+
 .articles {
-  margin-top: 96px;
+  margin-top: 150px;
   &__title {
     color: $titleColor;
-    text-align: center;
     font-family: "DM Serif Display", sans-serif;
     font-size: 50px;
     font-style: normal;
@@ -163,26 +127,19 @@
     line-height: 125%; /* 62.5px */
     letter-spacing: 1px;
   }
-  &__text {
-    margin-top: 12px;
-    color: $textColor;
-    text-align: center;
-    font-family: "Jost", sans-serif;
-    font-size: 22px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 150%; /* 33px */
-    letter-spacing: 0.22px;
-  }
+
   &__content {
-    margin-top: 52px;
-    display: flex;
-    justify-content: space-between;
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(3, 381px);
+    row-gap: 30px;
+    column-gap: 28px;
   }
 }
 .article {
   padding: 21px;
   width: 382px;
+  height: 521px;
   border-radius: 62px;
   border: 1px solid #e7e7e7;
   box-shadow: 0px 10px 30px 0px rgba(255, 255, 255, 0.25);
@@ -194,7 +151,8 @@
     left: 41px;
   }
   &__name {
-    margin-top: 21px;
+    width: 290px;
+    margin-top: 11px;
     color: $titleColor;
     font-family: "DM Serif Display", sans-serif;
     font-size: 25px;
@@ -213,7 +171,7 @@
     letter-spacing: 0.16px;
   }
   &__wrapper {
-    margin-top: 30px;
+    margin-top: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -227,6 +185,39 @@
     fill: #fff;
   }
 }
+.paganation {
+  margin-top: 51px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  &__wrapper {
+    position: relative;
+    &:hover circle {
+      cursor: pointer;
+      transition: all 0.3s;
+      fill: $indicatorsBackColor;
+      stroke: $indicatorsBackColor;
+    }
+  }
+  &__numberPage {
+    text-align: center;
+    width: 18px;
+    color: $titleColor;
+    font-family: "Jost", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%; /* 24px */
+    text-transform: capitalize;
+    position: absolute;
+    top: 14px;
+    left: 17px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
 .footer {
-  margin-bottom: 134px;
+  margin-top: 200px;
+  margin-bottom: 116px;
 }
