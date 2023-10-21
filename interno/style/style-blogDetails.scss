@@ -1,0 +1,162 @@
+@import "header";
+@import "breadcrumbs";
+@import "footer";
+@import "vars";
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Jost:wght@400;600&display=swap");
+
+.title {
+  color: $titleColor;
+  font-family: "DM Serif Display", sans-serif;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 125%; /* 62.5px */
+  letter-spacing: 1px;
+}
+.text {
+  color: $textColor;
+  font-family: "Jost", sans-serif;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 33px */
+  letter-spacing: 0.22px;
+}
+.hidden {
+  display: none;
+}
+.banner {
+  margin-top: 45px;
+  height: 351px;
+  background: url(../img/blogDetails-banner.png) no-repeat center;
+  padding-top: 178px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content {
+  margin-top: 200px;
+  display: flex;
+  gap: 52px;
+}
+.article {
+  width: 800px;
+  &__title {
+    margin-bottom: 21px;
+  }
+  &__title2 {
+    margin-bottom: 21px;
+  }
+  &__data {
+    color: $textColor;
+    font-family: "Jost", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 24px */
+    letter-spacing: 0.16px;
+  }
+  &__img2 {
+    margin-top: 35px;
+    margin-bottom: 27px;
+  }
+  &__img3 {
+    margin-top: 44px;
+    margin-bottom: 35px;
+  }
+  & ol {
+    margin-top: 24px;
+    padding-left: 20px;
+  }
+  &__list {
+    list-style-position: inside;
+    list-style-type: none; /* Убираем исходные маркеры */
+    counter-reset: my-counter; /* Задаём имя счетчика */
+    &Element {
+      position: relative;
+      margin-bottom: 32px;
+    }
+    & li::before {
+      position: absolute;
+      left: -20px;
+      top: 3px;
+      content: counter(my-counter); /* Выводим число */
+      counter-increment: my-counter; /* Увеличиваем значение счётчика */
+      color: $indicatorColor;
+      font-family: "DM Serif Display", sans-serif;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 125%; /* 25px */
+      letter-spacing: 0.4px;
+      margin-right: 14px; /* Расстояние от цифры до текста */
+    }
+  }
+}
+
+.wrapper {
+  margin-top: 46px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 48px;
+}
+.breadcrumbs {
+  &__li:not(:last-child) ::after {
+    padding: 0 5px;
+  }
+
+  &__link {
+    font-size: 16px;
+    letter-spacing: 0.16px;
+
+    &:hover {
+      color: $indicatorColor;
+    }
+  }
+
+  &__li:last-child > a {
+    color: $indicatorColor;
+  }
+}
+
+.tags {
+  &__title {
+    font-size: 25px;
+    letter-spacing: 0.5px;
+    margin-bottom: 24px;
+  }
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 11px;
+    column-gap: 10px;
+  }
+  &__btn {
+    padding: 9px 30px;
+    border-style: none;
+    border-radius: 10px;
+    background: $indicatorsBackColor;
+    font-family: "Jost", sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125%; /* 22.5px */
+    letter-spacing: 0.36px;
+    cursor: pointer;
+    &_activ {
+      background: $titleColor;
+      color: #fff;
+    }
+  }
+}
+.blog {
+  &__title {
+    margin-top: 20px;
+    font-size: 30px;
+    cursor: pointer;
+  }
+}
