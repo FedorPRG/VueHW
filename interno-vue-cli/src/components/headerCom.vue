@@ -1,15 +1,15 @@
 <template>
-    <header class="header center">
-        <div class="logo">
-            <a href="index.html"><img src="../assets/logo.png" alt="Logo"></a>
-            <a href="index.html">Interno</a>
-        </div>
-        <nav class="header__right">
-            <a href="./index.html">Home</a>
-            <a href="#">Project</a>
-            <a href="./blog.html">Blog</a>
-        </nav>
-    </header>
+  <header class="header center">
+    <div class="logo">
+      <a href="index.html"><img src="../assets/logo.png" alt="Logo"></a>
+      <a href="index.html">Interno</a>
+    </div>
+    <nav class="header__right">
+      <a href="./index.html">Home</a>
+      <a href="#">Project</a>
+      <a href="./blog.html">Blog</a>
+    </nav>
+  </header>
 </template>
 
 <script>
@@ -26,18 +26,25 @@ export default {
   padding-left: calc(50% - $widthSite / 2);
   padding-right: calc(50% - $widthSite / 2);
 }
+
 .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   font-family: "DM Serif Display", sans-serif;
   font-size: 40px;
   font-style: normal;
   font-weight: 400;
-  line-height: 125%; /* 50px */
+  line-height: 125%;
+
+  /* 50px */
   & img {
     width: 34px;
   }
 }
+
 .header {
-  padding-top: 53px;
+  padding-top: 44px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -50,7 +57,8 @@ export default {
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
-    line-height: 125%; /* 25px */
+    line-height: 125%;
+    /* 25px */
   }
 }
 </style>
