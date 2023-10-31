@@ -45,12 +45,12 @@ export default {
         'Kitchan',
         'Living Area'],
       projects: [{
-        tag: 'Bed Room',
+        tag: 'Bathroom',
         img: require('../assets/project1.png'),
         name: 'Minimal Bedroom',
         discription: 'Decor / Artchitecture'
       }, {
-        tag: 'Bed Room',
+        tag: 'Bathroom',
         img: require('../assets/project3.png'),
         name: 'Classic Minimal Bedroom',
         discription: 'Decor / Artchitecture'
@@ -65,22 +65,22 @@ export default {
         name: 'Modern Bedroom',
         discription: 'Decor / Artchitecture'
       }, {
-        tag: 'Bed Room',
+        tag: 'Kitchan',
         img: require('../assets/project2.png'),
         name: 'Minimal Bedroom',
         discription: 'Decor / Artchitecture'
       }, {
-        tag: 'Bed Room',
+        tag: 'Kitchan',
         img: require('../assets/project4.png'),
         name: 'Modern Bedroom',
         discription: 'Decor / Artchitecture'
       }, {
-        tag: 'Bed Room',
+        tag: 'Living Area',
         img: require('../assets/project6.png'),
         name: 'System Table',
         discription: 'Decor / Artchitecture'
       }, {
-        tag: 'Bed Room',
+        tag: 'Living Area',
         img: require('../assets/project8.png'),
         name: 'Modern Bedroom',
         discription: 'Decor / Artchitecture'
