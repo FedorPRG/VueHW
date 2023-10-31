@@ -1,25 +1,25 @@
 <template>
   <div id="app">
     <!-- <indexComp /> -->
-    <blogComp />
+    <!-- <blogComp /> -->
     <!-- <blogDetailsComp /> -->
-    <!-- <ProjectComp /> -->
+    <ProjectComp />
   </div>
 </template>
 
 <script>
 // import indexComp from './pages/indexComp.vue'
-import blogComp from './pages/blogComp.vue'
+// import blogComp from './pages/blogComp.vue'
 // import blogDetailsComp from './pages/blogDetailsComp.vue'
-// import ProjectComp from './pages/projectComp.vue'
+import ProjectComp from './pages/projectComp.vue'
 
 export default {
   name: 'App',
   components: {
     // indexComp
-    blogComp
+    // blogComp
     // blogDetailsComp
-    // ProjectComp
+    ProjectComp
   }
 }
 </script>

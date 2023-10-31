@@ -21,57 +21,20 @@
       <p class="projects__text">It is a long established fact that a reader will be distracted by the of readable <br>
         content of page lookings at
         its layouts points.</p>
-      <div class="projects__content">
-        <div v-for="(project, index) in projects" :key="index" class="project">
-          <img :src='project.img' alt="project">
-          <div class="project__wrapper">
-            <div>
-              <div class="project__name">{{ project.name }}</div>
-              <div class="project__discr">{{ project.discription }}</div>
-            </div>
-            <svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="35" cy="35" r="35" fill="#F4F0EC" />
-              <path d="M32 44L40 35L32 26" stroke="#292F36" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" />
-            </svg>
-          </div>
-        </div>
-      </div>
+      <indexProjectsCom :projects="projects" />
     </section>
-    <section class="indicators center">
-      <div v-for="(indicator, index) in indicators" :key="index" class="indicators__item">
-        <div class="indicators__quantity">{{ indicator.quantity }}</div>
-        <div class="indicators__name">{{ indicator.name }}</div>
-      </div>
-    </section>
-    <section class="articles center">
-      <h1 class="articles__title">Articles & News</h1>
-      <p class="articles__text">It is a long established fact that a reader will be distracted by the of readable
-        content of a page when
-        lookings at its layouts the points of using.</p>
-      <div class="articles__content">
-        <div v-for="(article, index) in articles" :key="index" class="article">
-          <img :src="article.img" alt="article1">
-          <img class="article__tag" :src="article.imgTag" alt="Tag1">
-          <div class="article__name">{{ article.name }}</div>
-          <div class="article__wrapper">
-            <div class="article__data">{{ article.data }}</div>
-            <svg xmlns="http://www.w3.org/2000/svg" width="52" height="53" viewBox="0 0 52 53" fill="none">
-              <circle cx="26" cy="26.267" r="26" fill="#F4F0EC" />
-              <path d="M23.7714 32.9527L29.7143 26.267L23.7714 19.5813" stroke="#292F36" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-          </div>
-        </div>
-      </div>
-    </section>
-    <footerCom />
+    <indexIndicatorsCom :indicators="indicators" />
+    <indexArticlesCom :articles="articles" />
+    <footerCom :indicators="indicators" />
   </div>
 </template>
 
 <script>
 import headerCom from '../components/headerCom.vue'
 import footerCom from '../components/footerCom.vue'
+import indexProjectsCom from '@/components/indexProjectsCom.vue'
+import indexIndicatorsCom from '@/components/indexIndicatorsCom.vue'
+import indexArticlesCom from '@/components/indexArticlesCom.vue'
 
 export default {
   name: 'indexComp',
@@ -127,7 +90,10 @@ export default {
   },
   components: {
     headerCom,
-    footerCom
+    footerCom,
+    indexProjectsCom,
+    indexIndicatorsCom,
+    indexArticlesCom
   }
 }
 </script>
@@ -234,188 +200,6 @@ svg:hover {
     line-height: 150%;
     /* 33px */
     letter-spacing: 0.22px;
-  }
-
-  &__content {
-    margin-top: 93px;
-    display: grid;
-    grid-template-columns: repeat(2, 548px);
-    row-gap: 56px;
-    column-gap: 104px;
-  }
-}
-
-.project {
-  &__wrapper {
-    margin-top: 24px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  &__name {
-    color: $titleColor;
-    font-family: "DM Serif Display", sans-serif;
-    font-size: 25px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 125%;
-    /* 31.25px */
-    letter-spacing: 0.5px;
-  }
-
-  &__discr {
-    color: $textColor;
-    font-family: "Jost", sans-serif;
-    font-size: 22px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 150%;
-    /* 33px */
-    letter-spacing: 0.22px;
-  }
-}
-
-.indicators {
-  justify-content: center;
-  margin-top: 100px;
-  background-color: $indicatorsBackColor;
-  height: 457px;
-  display: flex;
-  gap: 130px;
-
-  &__item {
-    padding-top: 151px;
-    width: 192px;
-    position: relative;
-
-    &:not(:last-child)::after {
-      content: " ";
-      background: $indicatorColor;
-      width: 1px;
-      height: 130px;
-      top: 169px;
-      left: 250px;
-      position: absolute;
-    }
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  &__quantity {
-    color: $indicatorColor;
-    font-family: "DM Serif Display", sans-serif;
-    font-size: 85px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 125%;
-    /* 106.25px */
-    letter-spacing: 1.7px;
-  }
-
-  &__name {
-    margin-top: 16px;
-    color: $textColor;
-    font-family: "Jost", sans-serif;
-    font-size: 22px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 150%;
-    /* 33px */
-    letter-spacing: 0.22px;
-  }
-}
-
-.articles {
-  margin-top: 96px;
-
-  &__title {
-    color: $titleColor;
-    text-align: center;
-    font-family: "DM Serif Display", sans-serif;
-    font-size: 50px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 125%;
-    /* 62.5px */
-    letter-spacing: 1px;
-  }
-
-  &__text {
-    margin-top: 12px;
-    color: $textColor;
-    text-align: center;
-    font-family: "Jost", sans-serif;
-    font-size: 22px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 150%;
-    /* 33px */
-    letter-spacing: 0.22px;
-  }
-
-  &__content {
-    margin-top: 52px;
-    display: flex;
-    justify-content: space-between;
-  }
-}
-
-.article {
-  padding: 21px;
-  width: 382px;
-  border-radius: 62px;
-  border: 1px solid #e7e7e7;
-  box-shadow: 0px 10px 30px 0px rgba(255, 255, 255, 0.25);
-  position: relative;
-  transition: all 0.3s;
-
-  &__tag {
-    position: absolute;
-    top: 249px;
-    left: 41px;
-  }
-
-  &__name {
-    margin-top: 21px;
-    color: $titleColor;
-    font-family: "DM Serif Display", sans-serif;
-    font-size: 25px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 125%;
-    /* 31.25px */
-    letter-spacing: 0.5px;
-  }
-
-  &__data {
-    color: $textColor;
-    font-family: "Jost", sans-serif;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 150%;
-    /* 24px */
-    letter-spacing: 0.16px;
-  }
-
-  &__wrapper {
-    margin-top: 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  &:hover {
-    background-color: $indicatorsBackColor;
-  }
-
-  &:hover circle {
-    cursor: pointer;
-    transition: fill 0.3s;
-    fill: #fff;
   }
 }
 </style>

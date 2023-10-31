@@ -17,9 +17,7 @@
         <button @click='selectProject(project, $event)' class="btn" v-for="(project, index) in projectsList"
           :key="index">{{ project }}</button>
       </div>
-      <div class="projects">
-        <projectsListCom :projects="projects" />
-      </div>
+      <projectsListCom :projects="filterList" />
     </section>
     <footerCom />
   </div>
@@ -40,17 +38,60 @@ export default {
   data () {
     return {
       currentProjectBtn: '',
-      selectedTag: '',
+      selectedProjectBtn: '',
       projectsList: [
         'Bathroom',
         'Bed Room',
         'Kitchan',
         'Living Area'],
       projects: [{
+        tag: 'Bed Room',
         img: require('../assets/project1.png'),
         name: 'Minimal Bedroom',
         discription: 'Decor / Artchitecture'
+      }, {
+        tag: 'Bed Room',
+        img: require('../assets/project3.png'),
+        name: 'Classic Minimal Bedroom',
+        discription: 'Decor / Artchitecture'
+      }, {
+        tag: 'Bed Room',
+        img: require('../assets/project5.png'),
+        name: 'Minimal Bedroom table',
+        discription: 'Decor / Artchitecture'
+      }, {
+        tag: 'Bed Room',
+        img: require('../assets/project7.png'),
+        name: 'Modern Bedroom',
+        discription: 'Decor / Artchitecture'
+      }, {
+        tag: 'Bed Room',
+        img: require('../assets/project2.png'),
+        name: 'Minimal Bedroom',
+        discription: 'Decor / Artchitecture'
+      }, {
+        tag: 'Bed Room',
+        img: require('../assets/project4.png'),
+        name: 'Modern Bedroom',
+        discription: 'Decor / Artchitecture'
+      }, {
+        tag: 'Bed Room',
+        img: require('../assets/project6.png'),
+        name: 'System Table',
+        discription: 'Decor / Artchitecture'
+      }, {
+        tag: 'Bed Room',
+        img: require('../assets/project8.png'),
+        name: 'Modern Bedroom',
+        discription: 'Decor / Artchitecture'
       }]
+    }
+  },
+  computed: {
+    filterList () {
+      return this.selectedProjectBtn
+        ? this.projects.filter((el) => el.tag.includes(this.selectedProjectBtn))
+        : this.projects
     }
   },
   methods: {
@@ -73,32 +114,15 @@ export default {
       }
       // добавляем выбранный тег для фильтрации
       // если выбранный тег равен текущему - второй раз нажали на туже кнопку тега
-      // if (this.selectedTag === tag) {
-      //   // то отменяется фильтрация и показываются все статьи
-      //   this.selectedTag = ''
-      //   // и делаем не активной второй раз нажатую кнопку тега
-      //   event.target.classList.remove('projects__btn_activ')
-      // } else {
-      //   // если выбранный тег не равен текущему, то происходит фильтрация по выбранному тегу
-      //   this.selectedTag = tag
-      // }
-      // // при клике на кнопки тегов убераем описание статей
-      // // у кликнутого тега находим родителя, потом второй следующий элемент, потом детей у этого второго элемента
-      // const elem = event.target.parentNode.nextSibling.children;
-      // // преобразуем HTML-collection в массив
-      // [...elem].forEach((el) => {
-      //   // пробегаемся по массиву и смотрим в .childNodes[1] - это и есть искомый элемент <p></p> в нем и смотрим класс
-      //   if (!el.childNodes[1].classList.contains('hidden')) {
-      //     el.childNodes[1].classList.add('hidden')
-      //   }
-      // })
-      // //   arr = [...elem];
-      // //   console.log([...elem][0].childNodes[1]);
-      // //   for (let i = 0; i < arr.length; i++) {
-      // //     if (!arr[i].childNodes[1].classList.contains("hidden")) {
-      // //       arr[i].childNodes[1].classList.add("hidden");
-      // //     }
-      // //   }
+      if (this.selectedProjectBtn === project) {
+        // то отменяется фильтрация и показываются все статьи
+        this.selectedProjectBtn = ''
+        // и делаем не активной второй раз нажатую кнопку тега
+        event.target.classList.remove('btn_activ')
+      } else {
+        // если выбранный тег не равен текущему, то происходит фильтрация по выбранному тегу
+        this.selectedProjectBtn = project
+      }
     }
   }
 }
@@ -153,36 +177,12 @@ p {
   }
 }
 
-.title {
-  color: $titleColor;
-  font-family: "DM Serif Display", sans-serif;
-  font-size: 50px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 125%;
-  /* 62.5px */
-  letter-spacing: 1px;
-}
-
-.text {
-  color: $textColor;
-  font-family: "Jost", sans-serif;
-  font-size: 22px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 150%;
-  /* 33px */
-  letter-spacing: 0.22px;
-}
-
 .hidden {
   display: none;
 }
 
 .content {
   margin-top: 200px;
-  // display: flex;
-  // gap: 52px;
 }
 
 .wrapper {
@@ -218,9 +218,5 @@ p {
     background: $indicatorColor;
     color: #fff;
   }
-}
-
-.projects {
-  margin-top: 61px;
 }
 </style>

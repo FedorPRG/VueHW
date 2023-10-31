@@ -3,13 +3,13 @@
     <div v-for="(article, index) in articles" :key="index" class="article">
       <img :src="article.img" alt="article1">
       <img class="article__tag" :src="article.tag" alt="Tag1">
-      <div class="article__name">{{article.name}}</div>
+      <div class="article__name">{{ article.name }}</div>
       <div class="article__wrapper">
-        <div class="article__data">{{article.data}}</div>
+        <div class="article__data">{{ article.data }}</div>
         <svg xmlns="http://www.w3.org/2000/svg" width="52" height="53" viewBox="0 0 52 53" fill="none">
           <circle cx="26" cy="26.267" r="26" fill="#F4F0EC" />
           <path d="M23.7714 32.9527L29.7143 26.267L23.7714 19.5813" stroke="#292F36" stroke-width="2"
-          stroke-linecap="round" stroke-linejoin="round" />
+            stroke-linecap="round" stroke-linejoin="round" />
         </svg>
       </div>
     </div>
@@ -19,63 +19,26 @@
 <script>
 export default {
   name: 'blogArticlesCom',
-  data () {
-    return {
-      articles: [
-        {
-          img: require('../assets/blog-article1.png'),
-          tag: require('../assets/tag1.png'),
-          name: 'Let’s Get Solution For Building Construction Work',
-          data: '26 December,2022'
-        },
-        {
-          img: require('../assets/blog-article2.png'),
-          tag: require('../assets/tag1.png'),
-          name: 'Low Cost Latest Invented Interior Designing <br> Ideas.',
-          data: '22 December,2022'
-        },
-        {
-          img: require('../assets/blog-article3.png'),
-          tag: require('../assets/tag1.png'),
-          name: 'Best For Any Office & Business Interior Solution',
-          data: '25 December,2022'
-        },
-        {
-          img: require('../assets/blog-article4.png'),
-          tag: require('../assets/tag1.png'),
-          name: 'Let’s Get Solution For Building Construction Work',
-          data: '26 December,2022'
-        },
-        {
-          img: require('../assets/blog-article5.png'),
-          tag: require('../assets/tag1.png'),
-          name: 'Low Cost Latest Invented Interior Designing <br> Ideas.',
-          data: '22 December,2022'
-        },
-        {
-          img: require('../assets/blog-article6.png'),
-          tag: require('../assets/tag1.png'),
-          name: 'Best For Any Office & Business Interior Solution',
-          data: '25 December,2022'
-        }
-      ]
-    }
-  }
+  props: ['articles']
 }
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @import "../assets/style/vars";
+
 .articles {
   margin-top: 150px;
+
   &__title {
     color: $titleColor;
     font-family: "DM Serif Display", sans-serif;
     font-size: 50px;
     font-style: normal;
     font-weight: 400;
-    line-height: 125%; /* 62.5px */
+    line-height: 125%;
+    /* 62.5px */
     letter-spacing: 1px;
   }
 
@@ -87,6 +50,7 @@ export default {
     column-gap: 28px;
   }
 }
+
 .article {
   padding: 21px;
   width: 382px;
@@ -96,11 +60,13 @@ export default {
   box-shadow: 0px 10px 30px 0px rgba(255, 255, 255, 0.25);
   position: relative;
   transition: all 0.3s;
+
   &__tag {
     position: absolute;
     top: 249px;
     left: 41px;
   }
+
   &__name {
     width: 290px;
     margin-top: 11px;
@@ -109,27 +75,33 @@ export default {
     font-size: 25px;
     font-style: normal;
     font-weight: 400;
-    line-height: 125%; /* 31.25px */
+    line-height: 125%;
+    /* 31.25px */
     letter-spacing: 0.5px;
   }
+
   &__data {
     color: $textColor;
     font-family: "Jost", sans-serif;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
-    line-height: 150%; /* 24px */
+    line-height: 150%;
+    /* 24px */
     letter-spacing: 0.16px;
   }
+
   &__wrapper {
     margin-top: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
+
   &:hover {
     background-color: $indicatorsBackColor;
   }
+
   &:hover circle {
     cursor: pointer;
     transition: fill 0.3s;
