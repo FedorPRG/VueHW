@@ -38,13 +38,7 @@ export default {
 .projects {
   max-height: 3230px;
   margin-top: 61px;
-  // display: flex;
-  // flex-direction: column;
-  // flex-wrap: wrap;
-  gap: 30px;
-  display: grid;
-  grid-template-columns: repeat(2, 585px);
-  grid-auto-flow: row dense;
+  column-count: 2
 }
 
 .wrapper {
