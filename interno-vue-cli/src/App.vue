@@ -3,7 +3,8 @@
     <!-- <indexComp /> -->
     <!-- <blogComp /> -->
     <!-- <blogDetailsComp /> -->
-    <ProjectComp />
+    <!-- <ProjectComp /> -->
+    <projectDetailsComp @nextSlider="nextSlider"/>
   </div>
 </template>
 
@@ -11,15 +12,28 @@
 // import indexComp from './pages/indexComp.vue'
 // import blogComp from './pages/blogComp.vue'
 // import blogDetailsComp from './pages/blogDetailsComp.vue'
-import ProjectComp from './pages/projectComp.vue'
+// import ProjectComp from './pages/projectComp.vue'
+import projectDetailsComp from './pages/projectDetailsComp.vue'
+import { mapState, mapGetters, mapMutations } from 'vuex'
 
 export default {
   name: 'App',
   components: {
-    // indexComp
-    // blogComp
-    // blogDetailsComp
-    ProjectComp
+    // indexComp,
+    // blogComp,
+    // blogDetailsComp,
+    // ProjectComp
+    projectDetailsComp
+  },
+  methods: {
+    nextSlider () {
+      this.NEXT_SLIDER()
+    },
+    ...mapMutations(['NEXT_SLIDER'])
+  },
+  computed: {
+    ...mapState(['title', 'text', 'currentSlider', 'slider']),
+    ...mapGetters(['getSlider'])
   }
 }
 </script>
@@ -32,9 +46,9 @@ export default {
 }
 
 #app {
-  img {
-    display: block;
-  }
+  // img {
+  //   display: block;
+  // }
 
   a {
     text-decoration: none;
