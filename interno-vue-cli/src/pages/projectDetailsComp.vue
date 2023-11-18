@@ -1,6 +1,6 @@
 <template>
   <div class="blogPages">
-    <headerCom />
+    <!-- <headerCom /> -->
     <section class="banner ">
     </section>
     <section class="content centerProjectDetails">
@@ -17,13 +17,13 @@
 
 <script>
 
-import headerCom from '../components/headerCom.vue'
+// import headerCom from '../components/headerCom.vue'
 import footerCom from '../components/footerCom.vue'
 
 export default {
   name: 'projectDetailsComp',
   components: {
-    headerCom,
+    // headerCom,
     footerCom
   },
   methods: {

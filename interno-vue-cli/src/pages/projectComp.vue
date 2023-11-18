@@ -1,6 +1,6 @@
 <template>
   <div class="blogPages">
-    <headerCom />
+    <!-- <headerCom /> -->
     <section class="banner center">
       <div class="banner__titleBack">
         <h1 class="banner__title">Our Project</h1>
@@ -24,14 +24,14 @@
 </template>
 
 <script>
-import headerCom from '../components/headerCom.vue'
+// import headerCom from '../components/headerCom.vue'
 import projectsListCom from '../components/projectsListCom.vue'
 import footerCom from '../components/footerCom.vue'
 
 export default {
   name: 'projectComp',
   components: {
-    headerCom,
+    // headerCom,
     projectsListCom,
     footerCom
   },
@@ -134,6 +134,7 @@ export default {
 @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Jost:wght@400;600&display=swap");
 @import "../assets/style/vars";
 @import "../assets/style/breadcrumbs";
+img {display: block;}
 
 h1 {
   margin: 0;

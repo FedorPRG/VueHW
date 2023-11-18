@@ -1,29 +1,18 @@
 <template>
   <div id="app">
-    <!-- <indexComp /> -->
-    <!-- <blogComp /> -->
-    <!-- <blogDetailsComp /> -->
-    <!-- <ProjectComp /> -->
-    <projectDetailsComp @nextSlider="nextSlider"/>
+    <headerCom />
+    <router-view/>
   </div>
 </template>
 
 <script>
-// import indexComp from './pages/indexComp.vue'
-// import blogComp from './pages/blogComp.vue'
-// import blogDetailsComp from './pages/blogDetailsComp.vue'
-// import ProjectComp from './pages/projectComp.vue'
-import projectDetailsComp from './pages/projectDetailsComp.vue'
+import headerCom from './components/headerCom.vue'
 import { mapState, mapGetters, mapMutations } from 'vuex'
 
 export default {
   name: 'App',
   components: {
-    // indexComp,
-    // blogComp,
-    // blogDetailsComp,
-    // ProjectComp
-    projectDetailsComp
+    headerCom
   },
   methods: {
     nextSlider () {
@@ -41,9 +30,9 @@ export default {
 <style lang="scss">
 @import "./assets/style/vars";
 
-* {
-  box-sizing: border-box;
-}
+// * {
+//   box-sizing: border-box;
+// }
 
 #app {
   // img {
@@ -55,9 +44,9 @@ export default {
     color: $titleColor;
   }
 
-  svg:hover {
-    cursor: pointer;
-  }
+  // svg:hover {
+  //   cursor: pointer;
+  // }
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

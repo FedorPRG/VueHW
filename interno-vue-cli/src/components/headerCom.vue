@@ -1,13 +1,13 @@
 <template>
   <header class="header center">
     <div class="logo">
-      <a href="index.html"><img src="../assets/logo.png" alt="Logo"></a>
-      <a href="index.html">Interno</a>
+      <router-link to="/home"><a href="index.html"><img src="../assets/logo.png" alt="Logo"></a></router-link>
+      <router-link to="/home"><a href="index.html">Interno</a></router-link>
     </div>
     <nav class="header__right">
-      <a href="./index.html">Home</a>
-      <a href="#">Project</a>
-      <a href="./blog.html">Blog</a>
+      <router-link to="/home">Home</router-link>
+      <router-link to="/project">Project</router-link>
+      <router-link to="/blog">Blog</router-link>
     </nav>
   </header>
 </template>

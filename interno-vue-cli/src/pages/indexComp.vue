@@ -1,6 +1,6 @@
 <template>
   <div class="index center">
-    <headerCom />
+    <!-- <headerCom /> -->
     <section class="banner center">
       <h1 class="banner__title">Let Your Home <br> Be Unique</h1>
       <p class="banner__text">There are many variations of the passages of lorem Ipsum fromavailable,
@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import headerCom from '../components/headerCom.vue'
+// import headerCom from '../components/headerCom.vue'
 import footerCom from '../components/footerCom.vue'
 import indexProjectsCom from '@/components/indexProjectsCom.vue'
 import indexIndicatorsCom from '@/components/indexIndicatorsCom.vue'
@@ -89,7 +89,7 @@ export default {
     }
   },
   components: {
-    headerCom,
+    // headerCom,
     footerCom,
     indexProjectsCom,
     indexIndicatorsCom,
@@ -159,7 +159,7 @@ svg:hover {
     gap: 10px;
     margin-top: 21px;
     margin-left: 52px;
-    color: #fff;
+    color: #fff !important;
     padding: 26px 48px;
     border-radius: 18px;
     background: $titleColor;

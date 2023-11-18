@@ -1,6 +1,6 @@
 <template>
   <div class="blogPages">
-    <headerCom />
+    <!-- <headerCom /> -->
     <section class="banner center">
     </section>
     <section class="content center">
@@ -56,14 +56,14 @@
 </template>
 
 <script>
-import headerCom from '../components/headerCom.vue'
+// import headerCom from '../components/headerCom.vue'
 import blogTagsCom from '../components/blogTagsCom.vue'
 import footerCom from '../components/footerCom.vue'
 
 export default {
   name: 'blogDetailsComp',
   components: {
-    headerCom,
+    // headerCom,
     blogTagsCom,
     footerCom
   }
